@@ -18,6 +18,8 @@ namespace TinyCsvParser
 
         public readonly bool KeepOrder;
 
+        public int SkipRows = 0;
+        
         public CsvParserOptions(bool skipHeader, char fieldsSeparator)
             : this(skipHeader, new QuotedStringTokenizer(fieldsSeparator))
         {
