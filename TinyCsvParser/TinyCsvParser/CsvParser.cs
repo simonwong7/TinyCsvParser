@@ -48,7 +48,7 @@ namespace TinyCsvParser
             }
                 
             return query
-                .Select(line => new TokenizedRow(line.Index, options.Tokenizer.Tokenize(line.Data)))
+                .Select(line => new TokenizedRow(line.Index, options.Tokenizer.Tokenize(line.Data))).Skip(options.SkipRows)
                 .Select(fields => mapping.Map(fields));
         }
 
